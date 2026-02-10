@@ -1,26 +1,23 @@
-"# CLP_1" 
-1. problem1_max_of_three.py
+# CLP_1
 
-Takes three integers as input
+## Student Information
+- Name:Md Tajim Akand  
+- ID:232002228-CSE316-232D7  
+- Course:CSE316  
+- Department:CSE, Green University of Bangladesh  
 
-Finds the maximum using only if–elif–else
+---
 
-2. problem2_digit_count_sum.py
+## Description
+This Python program solves three problems using three separate functions:
+1. Find the maximum of three numbers using if–elif–else  
+2. Count total digits and sum of digits of a number  
+3. Perform binary search after sorting a list using bubble sort  
 
-Takes one integer (handles negative values)
+All tasks are completed without using restricted built-in functions.
 
-Prints:
+---
 
-total number of digits
-
-sum of digits
-
-3. problem3_bubble_binary.py
-
-Takes a list of integers and a target value
-
-Sorts the list using bubble sort
-
-Searches the target using binary search
-
-Prints the 0-based index or -1 if not found
+## How to Run
+VS Code
+python filename.py
