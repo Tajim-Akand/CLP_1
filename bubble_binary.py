@@ -1,41 +1,40 @@
-arr = list(map(int, input().split()))
+def binary_search_with_bubble_sort(arr, target):
+    original_arr = arr.copy()   # keep original array
+    n = len(arr)
 
-target = int(input())
+    # Bubble Sort
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
-# bubble sort
+    # Binary Search
+    low = 0
+    high = n - 1
 
-for i in range(len(arr)):
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return original_arr.index(target)  # return original index
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
 
-    for j in range(len(arr) - i - 1):
+    return -1
 
-        if arr[j] > arr[j + 1]:
 
-            arr[j], arr[j + 1] = arr[j + 1], arr[j]
+size = int(input("Enter number of elements in the list: "))
+arr = []
 
-# binary search
+for i in range(size):
+    arr.append(int(input(f"Enter element {i+1}: ")))
 
-left = 0
+target = int(input("Enter target value to search: "))
 
-right = len(arr) - 1
+index = binary_search_with_bubble_sort(arr, target)
 
-index = -1
-
-while left <= right:
-
-    mid = (left + right) // 2
-
-    if arr[mid] == target:
-
-        index = mid
-
-        break
-
-    elif arr[mid] < target:
-
-        left = mid + 1
-
-    else:
-
-        right = mid - 1
-
-print("Index:", index)
+if index != -1:
+    print("Target found at index:", index)
+else:
+    print("Target not found (index -1)")
